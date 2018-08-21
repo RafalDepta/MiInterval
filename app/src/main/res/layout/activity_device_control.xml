@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.DeviceControlActivity">
+
+    <Button
+        android:id="@+id/device_vibration"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="VIBRATE" />
+
+    <Button
+        android:id="@+id/device_vibration_stop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="STOP VIBRATE"
+        app:layout_constraintTop_toBottomOf="@id/device_vibration" />
+
+    <Button
+        android:id="@+id/device_test"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Test"
+        app:layout_constraintTop_toBottomOf="@id/device_vibration_stop" />
+    <Button
+        android:id="@+id/device_test2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Test2"
+        app:layout_constraintTop_toBottomOf="@id/device_test" />
+
+</android.support.constraint.ConstraintLayout>

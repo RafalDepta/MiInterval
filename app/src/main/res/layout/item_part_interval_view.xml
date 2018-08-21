@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="pl.depta.rafal.miinterval.ui.main.newinterval.IntervalPartViewModel" />
+
+    </data>
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="4dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:onClick="@{() -> viewModel.onTestClick()}"
+        android:focusableInTouchMode="true"
+        android:padding="10dp">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="4dp">
+
+            <EditText
+                android:id="@+id/part_interval_vibration"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="vibration"
+                android:inputType="numberSigned"
+                android:text="@{viewModel.vibration}"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <EditText
+                android:id="@+id/part_interval_pause"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="pause"
+                android:inputType="numberSigned"
+                android:text="@{viewModel.pause}"
+                app:layout_constraintEnd_toStartOf="@id/part_interval_repeat"
+                app:layout_constraintStart_toEndOf="@id/part_interval_vibration" />
+
+            <EditText
+                android:id="@+id/part_interval_repeat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="repeat"
+                android:inputType="numberSigned"
+                android:text="@{viewModel.repeat}"
+                app:layout_constraintStart_toEndOf="@id/part_interval_pause" />
+
+            <Button
+                android:id="@+id/part_interval_delete"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="@{() -> viewModel.onDeletePartClick()}"
+                android:text="Delete"
+                app:layout_constraintEnd_toEndOf="parent" />
+        </android.support.constraint.ConstraintLayout>
+
+
+    </android.support.v7.widget.CardView>
+</layout>
